@@ -13,8 +13,8 @@ source:
 build:
   script: 
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - cargo install --locked --bins --root ${{ PREFIX }} --path .
-  number: 0
+    - cargo install --locked --bins --no-track --root ${{ PREFIX }} --path .
+  number: 1
 
 requirements:
   build:
@@ -22,8 +22,6 @@ requirements:
     - ${{ stdlib('c') }}
     - ${{ compiler('rust') }} >= 1.82
     - cargo-bundle-licenses
-  host:
-    - openssl
 
 tests:
   - script:
