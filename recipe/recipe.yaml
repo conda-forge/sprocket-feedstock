@@ -1,6 +1,6 @@
 context:
-  name: sprocket 
-  version: "0.10.0"
+  name: sprocket
+  version: "0.10.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,13 +8,13 @@ package:
 
 source:
   url: https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 2e2eea2d777a45bd4c7bfd3f29de30835c986fda3be3ea36e5dc596931edeebd
+  sha256: c43f967cc045fe13fac2e91a8f4923b36c980460a4927e8333a858837c055559
 
 build:
-  script: 
+  script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - cargo install --locked --bins --no-track --root ${{ PREFIX }} --path .
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -25,7 +25,7 @@ requirements:
 
 tests:
   - script:
-    - sprocket help
+      - sprocket help
 
 about:
   homepage: https://sprocket.bio/
