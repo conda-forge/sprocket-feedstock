@@ -23,6 +23,8 @@ requirements:
     - ${{ compiler('rust') }} >= 1.82
     - cargo-bundle-licenses
     - pkg-config
+  host:
+    - openssl
 
 tests:
   - script:
