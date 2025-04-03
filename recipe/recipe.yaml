@@ -1,6 +1,6 @@
 context:
   name: sprocket
-  version: "0.10.1"
+  version: "0.11.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,11 +8,14 @@ package:
 
 source:
   url: https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: c43f967cc045fe13fac2e91a8f4923b36c980460a4927e8333a858837c055559
+  sha256: f1def26b674fe09343948d46ce45004930185b181facffb3b4e19eea25e97c2e
 
 build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+    - if: unix
+      then:
+        - export OPENSSL_DIR=${{ PREFIX }}
     - cargo install --locked --bins --no-track --root ${{ PREFIX }} --path .
   number: 0
 
@@ -22,6 +25,8 @@ requirements:
     - ${{ stdlib('c') }}
     - ${{ compiler('rust') }} >= 1.82
     - cargo-bundle-licenses
+  host:
+    - openssl
 
 tests:
   - script:
