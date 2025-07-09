@@ -7,7 +7,7 @@
 
 [project]
 name = "sprocket-feedstock"
-version = "3.48.1"  # conda-smithy version used to generate this file
+version = "3.51.0"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/sprocket-feedstock"
 authors = ["@conda-forge/sprocket"]
 channels = ["conda-forge"]
