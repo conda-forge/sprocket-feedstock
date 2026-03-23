@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 2ee9446190b3d79666d9bd4f60b24c7f85509c0c6b55ac5591414d874de68fda
+  sha256: 1f4ca6b0bd81302fffa41fef172e9d489c6a2787f6c5d94a3b941aeff6154189
 
 build:
   script:
