@@ -1,6 +1,6 @@
 context:
   name: sprocket
-  version: "0.29.0"
+  version: "0.30.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/stjude-rust-labs/sprocket/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: e3fc518640fff8b59ee59ebaeef514f1f8d1ff6c6004f54910b5b5541178a94f
+  sha256: ba465be9049007a31daa7d70369b3f82a086bf262e11bd62979da0137fb00950
 
 build:
   script:
